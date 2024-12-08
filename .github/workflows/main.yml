@@ -17,8 +17,11 @@ jobs:
         with:
           node-version: '20'
       
+      - name: Install ESLint
+        run: npm install eslint
+      
       - name: Run ESLint
-        run: npm install eslint && npx eslint app.js
+        run: npx eslint . # This will lint all files according to the new config
       
       - name: Run OWASP ZAP
         run: |
